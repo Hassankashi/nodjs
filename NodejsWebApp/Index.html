@@ -1,0 +1,28 @@
+﻿<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+
+<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+<script src="http://localhost:8080/server.js"></script>
+<script src="/server.js"></script>
+<script>
+    var socket = io.connect();
+
+    socket.on('message', function (data) {
+        $('#conversation').append('</br>' + data.message);
+     });
+
+
+    $(document).ready(function () {
+        $('#send').click(function () {
+            var msg = $('#text').val();
+            socket.emit('client_data', { 'letter': msg });
+         })
+    });
+
+
+
+</script>
+
+<input id="text" />
+<button id="send">send</button>
+<div id="conversation">This is our conversation</div>

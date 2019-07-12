@@ -1,0 +1,13 @@
+{
+  "name": "NodejsWebApp",
+  "version": "0.0.0",
+  "description": "NodejsWebApp",
+  "main": "server.js",
+  "author": {
+    "name": "Oracle",
+    "email": ""
+  },
+  "dependencies": {
+    "socket.io": "^1.4.8"
+  }
+}
